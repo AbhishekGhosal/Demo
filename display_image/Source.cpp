@@ -3,24 +3,23 @@
 #include <opencv2\imgproc\imgproc.hpp>
 #include <iostream>
 
-using namespace std;
-using namespace cv;
+
 
 
 int main() {
 
-	Mat imgOriginal = imread("image.jpg");
+	cv::Mat imgOriginal = cv:: imread("image.jpg");
 	if (imgOriginal.empty()) {
-		cout << "error loading image" << endl;
+		std::cout << "error loading image" << std::endl;
 		system("pause");
 		return 0;
 	}
 
-	namedWindow("imgOriginal", CV_WINDOW_NORMAL);
-	imshow("imgOriginal", imgOriginal);
+	cv::namedWindow("imgOriginal", CV_WINDOW_NORMAL);
+	cv::imshow("imgOriginal", imgOriginal);
 
-	waitKey(0);
-	destroyWindow("imgOriginal");
+	cv::waitKey(0);
+	cv::destroyWindow("imgOriginal");
 
 	return 0;
 }
